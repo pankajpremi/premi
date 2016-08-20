@@ -1,0 +1,1381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ApecIdentityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Country" Type="nvarchar" MaxLength="150" />
+          <Property Name="City" Type="nvarchar" MaxLength="150" />
+          <Property Name="State" Type="nvarchar" MaxLength="150" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SignUpDate" Type="datetime" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="Approved" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+          <Property Name="StatusUpdateDateTime" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblIdentity_Clients">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Secret" Type="varchar" MaxLength="250" />
+          <Property Name="Name" Type="varchar" MaxLength="250" />
+          <Property Name="ApplicationType" Type="int" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="RefreshTokenLifeTime" Type="int" />
+          <Property Name="AllowedOrigin" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="tblIdentity_Gateways">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PortalGatewayID" Type="int" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblIdentity_GatewaySystemRoles">
+          <Key>
+            <PropertyRef Name="GatewayId" />
+            <PropertyRef Name="SystemRoleId" />
+          </Key>
+          <Property Name="GatewayId" Type="int" Nullable="false" />
+          <Property Name="SystemRoleId" Type="int" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblIdentity_PasswordPolicies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PortalId" Type="int" />
+          <Property Name="RequiredLength" Type="int" />
+          <Property Name="RequireNonLetterOrDigit" Type="bit" />
+          <Property Name="RequireDigit" Type="bit" />
+          <Property Name="RequireLowercase" Type="bit" />
+          <Property Name="RequireUppercase" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblIdentity_Permissions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblIdentity_Portals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="PortalPortalID" Type="int" />
+          <Property Name="DomainURLs" Type="varchar" MaxLength="500" />
+          <Property Name="DatabaseName" Type="varchar" MaxLength="500" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="CreateDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblIdentity_RefreshTokens">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="250" />
+          <Property Name="ClientID" Type="varchar" MaxLength="250" />
+          <Property Name="IssuedUtc" Type="datetime" />
+          <Property Name="ExpiresUtc" Type="datetime" />
+          <Property Name="ProtectedTicket" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblIdentity_Statuses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="6" />
+          <Property Name="Value" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="UpdateDateTime" Type="datetime" />
+          <Property Name="ChangeUser" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="tblIdentity_SystemRolePermissions">
+          <Key>
+            <PropertyRef Name="SystemRoleId" />
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="SystemRoleId" Type="int" Nullable="false" />
+          <Property Name="PermissionId" Type="int" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblIdentity_SystemRoles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="ServiceCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ApecIdentity.dbo.tblIdentity_UserAssets' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblIdentity_UserAssets">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="AssetId" />
+            <PropertyRef Name="TypeId" />
+            <PropertyRef Name="PortalId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="AssetId" Type="int" Nullable="false" />
+          <Property Name="TypeId" Type="int" Nullable="false" />
+          <Property Name="PortalId" Type="int" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblIdentity_UserGateways">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GatewayId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GatewayId" Type="int" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblIdentity_UserPortals">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PortalId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="PortalId" Type="int" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblIdentity_UserProfiles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="250" />
+          <Property Name="CompanyAccessRequest" Type="varchar" MaxLength="250" />
+          <Property Name="TimeZoneCode" Type="varchar" MaxLength="150" />
+          <Property Name="AccessRightRequest" Type="varchar" MaxLength="500" />
+          <Property Name="TermsAccepted" Type="bit" />
+          <Property Name="TermsAcceptedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblIdentity_UserSystemRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="GatewayId" />
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="GatewayId" Type="int" Nullable="false" />
+          <Property Name="PermissionId" Type="int" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AspNetUserClaims_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserLogins_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserRoles_AspNetRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserRoles_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUsers_tblIdentity_Statuses">
+          <End Role="tblIdentity_Statuses" Type="Self.tblIdentity_Statuses" Multiplicity="1" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Statuses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AspNetUsers">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_Gateways_tblIdentity_Portals">
+          <End Role="tblIdentity_Portals" Type="Self.tblIdentity_Portals" Multiplicity="1" />
+          <End Role="tblIdentity_Gateways" Type="Self.tblIdentity_Gateways" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Portals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_Gateways">
+              <PropertyRef Name="PortalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_GatewaySystemRoles_tblIdentity_Gateways">
+          <End Role="tblIdentity_Gateways" Type="Self.tblIdentity_Gateways" Multiplicity="1" />
+          <End Role="tblIdentity_GatewaySystemRoles" Type="Self.tblIdentity_GatewaySystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Gateways">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_GatewaySystemRoles">
+              <PropertyRef Name="GatewayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_GatewaySystemRoles_tblIdentity_SystemRoles">
+          <End Role="tblIdentity_SystemRoles" Type="Self.tblIdentity_SystemRoles" Multiplicity="1" />
+          <End Role="tblIdentity_GatewaySystemRoles" Type="Self.tblIdentity_GatewaySystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_SystemRoles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_GatewaySystemRoles">
+              <PropertyRef Name="SystemRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_PasswordPolicies_tblIdentity_Portals">
+          <End Role="tblIdentity_Portals" Type="Self.tblIdentity_Portals" Multiplicity="0..1" />
+          <End Role="tblIdentity_PasswordPolicies" Type="Self.tblIdentity_PasswordPolicies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Portals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_PasswordPolicies">
+              <PropertyRef Name="PortalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_SystemRolePermissions_tblIdentity_Permissions">
+          <End Role="tblIdentity_Permissions" Type="Self.tblIdentity_Permissions" Multiplicity="1" />
+          <End Role="tblIdentity_SystemRolePermissions" Type="Self.tblIdentity_SystemRolePermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Permissions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblIdentity_SystemRolePermissions">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_SystemRolePermissions_tblIdentity_SystemRoles">
+          <End Role="tblIdentity_SystemRoles" Type="Self.tblIdentity_SystemRoles" Multiplicity="1" />
+          <End Role="tblIdentity_SystemRolePermissions" Type="Self.tblIdentity_SystemRolePermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_SystemRoles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_SystemRolePermissions">
+              <PropertyRef Name="SystemRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_UserAssets_tblIdentity_Portals">
+          <End Role="tblIdentity_Portals" Type="Self.tblIdentity_Portals" Multiplicity="1" />
+          <End Role="tblIdentity_UserAssets" Type="Self.tblIdentity_UserAssets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Portals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserAssets">
+              <PropertyRef Name="PortalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_UserProfiles_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="tblIdentity_UserProfiles" Type="Self.tblIdentity_UserProfiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserProfiles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_UserSystemRoles_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="tblIdentity_UserSystemRoles" Type="Self.tblIdentity_UserSystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserSystemRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_UserSystemRoles_tblIdentity_Gateways">
+          <End Role="tblIdentity_Gateways" Type="Self.tblIdentity_Gateways" Multiplicity="1" />
+          <End Role="tblIdentity_UserSystemRoles" Type="Self.tblIdentity_UserSystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Gateways">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserSystemRoles">
+              <PropertyRef Name="GatewayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_UserSystemRoles_tblIdentity_Permissions">
+          <End Role="tblIdentity_Permissions" Type="Self.tblIdentity_Permissions" Multiplicity="1" />
+          <End Role="tblIdentity_UserSystemRoles" Type="Self.tblIdentity_UserSystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Permissions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserSystemRoles">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_UserSystemRoles_tblIdentity_SystemRoles">
+          <End Role="tblIdentity_SystemRoles" Type="Self.tblIdentity_SystemRoles" Multiplicity="1" />
+          <End Role="tblIdentity_UserSystemRoles" Type="Self.tblIdentity_UserSystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_SystemRoles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserSystemRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ApecIdentityModelStoreContainer">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_Clients" EntityType="Self.tblIdentity_Clients" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_Gateways" EntityType="Self.tblIdentity_Gateways" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_GatewaySystemRoles" EntityType="Self.tblIdentity_GatewaySystemRoles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_PasswordPolicies" EntityType="Self.tblIdentity_PasswordPolicies" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_Permissions" EntityType="Self.tblIdentity_Permissions" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_Portals" EntityType="Self.tblIdentity_Portals" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_RefreshTokens" EntityType="Self.tblIdentity_RefreshTokens" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_Statuses" EntityType="Self.tblIdentity_Statuses" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_SystemRolePermissions" EntityType="Self.tblIdentity_SystemRolePermissions" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_SystemRoles" EntityType="Self.tblIdentity_SystemRoles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_UserGateways" EntityType="Self.tblIdentity_UserGateways" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_UserPortals" EntityType="Self.tblIdentity_UserPortals" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_UserProfiles" EntityType="Self.tblIdentity_UserProfiles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_UserSystemRoles" EntityType="Self.tblIdentity_UserSystemRoles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblIdentity_UserAssets" EntityType="Self.tblIdentity_UserAssets" store:Type="Tables" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+    [tblIdentity_UserAssets].[UserId] AS [UserId], 
+    [tblIdentity_UserAssets].[AssetId] AS [AssetId], 
+    [tblIdentity_UserAssets].[TypeId] AS [TypeId], 
+    [tblIdentity_UserAssets].[PortalId] AS [PortalId], 
+    [tblIdentity_UserAssets].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[tblIdentity_UserAssets] AS [tblIdentity_UserAssets]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers" Association="Self.FK_AspNetUserClaims_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers" Association="Self.FK_AspNetUserLogins_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles" Association="Self.FK_AspNetUserRoles_AspNetRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers" Association="Self.FK_AspNetUserRoles_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUsers_tblIdentity_Statuses" Association="Self.FK_AspNetUsers_tblIdentity_Statuses">
+            <End Role="tblIdentity_Statuses" EntitySet="tblIdentity_Statuses" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_Gateways_tblIdentity_Portals" Association="Self.FK_tblIdentity_Gateways_tblIdentity_Portals">
+            <End Role="tblIdentity_Portals" EntitySet="tblIdentity_Portals" />
+            <End Role="tblIdentity_Gateways" EntitySet="tblIdentity_Gateways" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_GatewaySystemRoles_tblIdentity_Gateways" Association="Self.FK_tblIdentity_GatewaySystemRoles_tblIdentity_Gateways">
+            <End Role="tblIdentity_Gateways" EntitySet="tblIdentity_Gateways" />
+            <End Role="tblIdentity_GatewaySystemRoles" EntitySet="tblIdentity_GatewaySystemRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_GatewaySystemRoles_tblIdentity_SystemRoles" Association="Self.FK_tblIdentity_GatewaySystemRoles_tblIdentity_SystemRoles">
+            <End Role="tblIdentity_SystemRoles" EntitySet="tblIdentity_SystemRoles" />
+            <End Role="tblIdentity_GatewaySystemRoles" EntitySet="tblIdentity_GatewaySystemRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_PasswordPolicies_tblIdentity_Portals" Association="Self.FK_tblIdentity_PasswordPolicies_tblIdentity_Portals">
+            <End Role="tblIdentity_Portals" EntitySet="tblIdentity_Portals" />
+            <End Role="tblIdentity_PasswordPolicies" EntitySet="tblIdentity_PasswordPolicies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_SystemRolePermissions_tblIdentity_Permissions" Association="Self.FK_tblIdentity_SystemRolePermissions_tblIdentity_Permissions">
+            <End Role="tblIdentity_Permissions" EntitySet="tblIdentity_Permissions" />
+            <End Role="tblIdentity_SystemRolePermissions" EntitySet="tblIdentity_SystemRolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_SystemRolePermissions_tblIdentity_SystemRoles" Association="Self.FK_tblIdentity_SystemRolePermissions_tblIdentity_SystemRoles">
+            <End Role="tblIdentity_SystemRoles" EntitySet="tblIdentity_SystemRoles" />
+            <End Role="tblIdentity_SystemRolePermissions" EntitySet="tblIdentity_SystemRolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_UserAssets_tblIdentity_Portals" Association="Self.FK_tblIdentity_UserAssets_tblIdentity_Portals">
+            <End Role="tblIdentity_Portals" EntitySet="tblIdentity_Portals" />
+            <End Role="tblIdentity_UserAssets" EntitySet="tblIdentity_UserAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_UserProfiles_AspNetUsers" Association="Self.FK_tblIdentity_UserProfiles_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="tblIdentity_UserProfiles" EntitySet="tblIdentity_UserProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_UserSystemRoles_AspNetUsers" Association="Self.FK_tblIdentity_UserSystemRoles_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="tblIdentity_UserSystemRoles" EntitySet="tblIdentity_UserSystemRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_UserSystemRoles_tblIdentity_Gateways" Association="Self.FK_tblIdentity_UserSystemRoles_tblIdentity_Gateways">
+            <End Role="tblIdentity_Gateways" EntitySet="tblIdentity_Gateways" />
+            <End Role="tblIdentity_UserSystemRoles" EntitySet="tblIdentity_UserSystemRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_UserSystemRoles_tblIdentity_Permissions" Association="Self.FK_tblIdentity_UserSystemRoles_tblIdentity_Permissions">
+            <End Role="tblIdentity_Permissions" EntitySet="tblIdentity_Permissions" />
+            <End Role="tblIdentity_UserSystemRoles" EntitySet="tblIdentity_UserSystemRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_UserSystemRoles_tblIdentity_SystemRoles" Association="Self.FK_tblIdentity_UserSystemRoles_tblIdentity_SystemRoles">
+            <End Role="tblIdentity_SystemRoles" EntitySet="tblIdentity_SystemRoles" />
+            <End Role="tblIdentity_UserSystemRoles" EntitySet="tblIdentity_UserSystemRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ApecIdentityModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserRoles" Relationship="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" FromRole="AspNetRoles" ToRole="AspNetUserRoles" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AspNetRole" Relationship="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" FromRole="AspNetUserRoles" ToRole="AspNetRoles" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" FromRole="AspNetUserRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SignUpDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetUserRoles" Relationship="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserRoles" />
+          <Property Name="State" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Approved" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblIdentity_UserProfiles" Relationship="ApecIdentityModel.FK_tblIdentity_UserProfiles_AspNetUsers" FromRole="AspNetUser" ToRole="tblIdentity_UserProfiles" />
+          <NavigationProperty Name="tblIdentity_UserSystemRoles" Relationship="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_AspNetUsers" FromRole="AspNetUser" ToRole="tblIdentity_UserSystemRoles" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="StatusUpdateDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblIdentity_Statuses" Relationship="ApecIdentityModel.FK_AspNetUsers_tblIdentity_Statuses" FromRole="AspNetUser" ToRole="tblIdentity_Statuses" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ApecIdentityEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRole" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <EntitySet Name="tblIdentity_UserSystemRoles" EntityType="ApecIdentityModel.tblIdentity_UserSystemRoles" />
+          <EntitySet Name="tblIdentity_SystemRoles" EntityType="ApecIdentityModel.tblIdentity_SystemRoles" />
+          <EntitySet Name="tblIdentity_UserGateways" EntityType="ApecIdentityModel.tblIdentity_UserGateways" />
+          <EntitySet Name="tblIdentity_Clients" EntityType="ApecIdentityModel.tblIdentity_Clients" />
+          <EntitySet Name="tblIdentity_RefreshTokens" EntityType="ApecIdentityModel.tblIdentity_RefreshTokens" />
+          <EntitySet Name="tblIdentity_Gateways" EntityType="ApecIdentityModel.tblIdentity_Gateways" />
+          <EntitySet Name="tblIdentity_Portals" EntityType="ApecIdentityModel.tblIdentity_Portals" />
+          <AssociationSet Name="FK_tblIdentity_Gateways_tblIdentity_Portals" Association="ApecIdentityModel.FK_tblIdentity_Gateways_tblIdentity_Portals">
+            <End Role="tblIdentity_Portals" EntitySet="tblIdentity_Portals" />
+            <End Role="tblIdentity_Gateways" EntitySet="tblIdentity_Gateways" />
+          </AssociationSet>
+          <EntitySet Name="tblIdentity_UserPortals" EntityType="ApecIdentityModel.tblIdentity_UserPortals" />
+          <EntitySet Name="tblIdentity_UserProfiles" EntityType="ApecIdentityModel.tblIdentity_UserProfiles" />
+          <AssociationSet Name="FK_tblIdentity_UserProfiles_AspNetUsers" Association="ApecIdentityModel.FK_tblIdentity_UserProfiles_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="tblIdentity_UserProfiles" EntitySet="tblIdentity_UserProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_UserSystemRoles_AspNetUsers" Association="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="tblIdentity_UserSystemRoles" EntitySet="tblIdentity_UserSystemRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_UserSystemRoles_tblIdentity_Gateways" Association="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_Gateways">
+            <End Role="tblIdentity_Gateways" EntitySet="tblIdentity_Gateways" />
+            <End Role="tblIdentity_UserSystemRoles" EntitySet="tblIdentity_UserSystemRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_UserSystemRoles_tblIdentity_SystemRoles" Association="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_SystemRoles">
+            <End Role="tblIdentity_SystemRoles" EntitySet="tblIdentity_SystemRoles" />
+            <End Role="tblIdentity_UserSystemRoles" EntitySet="tblIdentity_UserSystemRoles" />
+          </AssociationSet>
+          <EntitySet Name="tblIdentity_Permissions" EntityType="ApecIdentityModel.tblIdentity_Permissions" />
+          <AssociationSet Name="FK_tblIdentity_UserSystemRoles_tblIdentity_Permissions" Association="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_Permissions">
+            <End Role="tblIdentity_Permissions" EntitySet="tblIdentity_Permissions" />
+            <End Role="tblIdentity_UserSystemRoles" EntitySet="tblIdentity_UserSystemRoles" />
+          </AssociationSet>
+          <EntitySet Name="tblIdentity_Statuses" EntityType="ApecIdentityModel.tblIdentity_Statuses" />
+          <AssociationSet Name="FK_AspNetUsers_tblIdentity_Statuses" Association="ApecIdentityModel.FK_AspNetUsers_tblIdentity_Statuses">
+            <End Role="tblIdentity_Statuses" EntitySet="tblIdentity_Statuses" />
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <EntitySet Name="tblIdentity_PasswordPolicies" EntityType="ApecIdentityModel.tblIdentity_PasswordPolicies" />
+          <AssociationSet Name="FK_tblIdentity_PasswordPolicies_tblIdentity_Portals" Association="ApecIdentityModel.FK_tblIdentity_PasswordPolicies_tblIdentity_Portals">
+            <End Role="tblIdentity_Portals" EntitySet="tblIdentity_Portals" />
+            <End Role="tblIdentity_PasswordPolicies" EntitySet="tblIdentity_PasswordPolicies" />
+          </AssociationSet>
+          <EntitySet Name="tblIdentity_GatewaySystemRoles" EntityType="ApecIdentityModel.tblIdentity_GatewaySystemRoles" />
+          <EntitySet Name="tblIdentity_SystemRolePermissions" EntityType="ApecIdentityModel.tblIdentity_SystemRolePermissions" />
+          <AssociationSet Name="FK_tblIdentity_GatewaySystemRoles_tblIdentity_Gateways" Association="ApecIdentityModel.FK_tblIdentity_GatewaySystemRoles_tblIdentity_Gateways">
+            <End Role="tblIdentity_Gateways" EntitySet="tblIdentity_Gateways" />
+            <End Role="tblIdentity_GatewaySystemRoles" EntitySet="tblIdentity_GatewaySystemRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_GatewaySystemRoles_tblIdentity_SystemRoles" Association="ApecIdentityModel.FK_tblIdentity_GatewaySystemRoles_tblIdentity_SystemRoles">
+            <End Role="tblIdentity_SystemRoles" EntitySet="tblIdentity_SystemRoles" />
+            <End Role="tblIdentity_GatewaySystemRoles" EntitySet="tblIdentity_GatewaySystemRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_SystemRolePermissions_tblIdentity_Permissions" Association="ApecIdentityModel.FK_tblIdentity_SystemRolePermissions_tblIdentity_Permissions">
+            <End Role="tblIdentity_Permissions" EntitySet="tblIdentity_Permissions" />
+            <End Role="tblIdentity_SystemRolePermissions" EntitySet="tblIdentity_SystemRolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIdentity_SystemRolePermissions_tblIdentity_SystemRoles" Association="ApecIdentityModel.FK_tblIdentity_SystemRolePermissions_tblIdentity_SystemRoles">
+            <End Role="tblIdentity_SystemRoles" EntitySet="tblIdentity_SystemRoles" />
+            <End Role="tblIdentity_SystemRolePermissions" EntitySet="tblIdentity_SystemRolePermissions" />
+          </AssociationSet>
+          <EntitySet Name="tblIdentity_UserAssets" EntityType="ApecIdentityModel.tblIdentity_UserAssets" />
+          <AssociationSet Name="FK_tblIdentity_UserAssets_tblIdentity_Portals" Association="ApecIdentityModel.FK_tblIdentity_UserAssets_tblIdentity_Portals">
+            <End Role="tblIdentity_Portals" EntitySet="tblIdentity_Portals" />
+            <End Role="tblIdentity_UserAssets" EntitySet="tblIdentity_UserAssets" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="tblIdentity_UserSystemRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="GatewayId" />
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="GatewayId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PermissionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_AspNetUsers" FromRole="tblIdentity_UserSystemRoles" ToRole="AspNetUser" />
+          <NavigationProperty Name="tblIdentity_Gateways" Relationship="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_Gateways" FromRole="tblIdentity_UserSystemRoles" ToRole="tblIdentity_Gateways" />
+          <NavigationProperty Name="tblIdentity_SystemRoles" Relationship="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_SystemRoles" FromRole="tblIdentity_UserSystemRoles" ToRole="tblIdentity_SystemRoles" />
+          <NavigationProperty Name="tblIdentity_Permissions" Relationship="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_Permissions" FromRole="tblIdentity_UserSystemRoles" ToRole="tblIdentity_Permissions" />
+        </EntityType>
+        <EntityType Name="tblIdentity_SystemRoles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblIdentity_UserSystemRoles" Relationship="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_SystemRoles" FromRole="tblIdentity_SystemRoles" ToRole="tblIdentity_UserSystemRoles" />
+          <NavigationProperty Name="tblIdentity_GatewaySystemRoles" Relationship="ApecIdentityModel.FK_tblIdentity_GatewaySystemRoles_tblIdentity_SystemRoles" FromRole="tblIdentity_SystemRoles" ToRole="tblIdentity_GatewaySystemRoles" />
+          <NavigationProperty Name="tblIdentity_SystemRolePermissions" Relationship="ApecIdentityModel.FK_tblIdentity_SystemRolePermissions_tblIdentity_SystemRoles" FromRole="tblIdentity_SystemRoles" ToRole="tblIdentity_SystemRolePermissions" />
+        </EntityType>
+        <EntityType Name="tblIdentity_UserGateways">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GatewayId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="GatewayId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblIdentity_Clients">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Secret" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicationType" Type="Int32" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="RefreshTokenLifeTime" Type="Int32" />
+          <Property Name="AllowedOrigin" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblIdentity_RefreshTokens">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ClientID" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IssuedUtc" Type="DateTime" Precision="3" />
+          <Property Name="ExpiresUtc" Type="DateTime" Precision="3" />
+          <Property Name="ProtectedTicket" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblIdentity_Gateways">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PortalGatewayID" Type="Int32" />
+          <Property Name="PortalID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblIdentity_Portals" Relationship="ApecIdentityModel.FK_tblIdentity_Gateways_tblIdentity_Portals" FromRole="tblIdentity_Gateways" ToRole="tblIdentity_Portals" />
+          <NavigationProperty Name="tblIdentity_UserSystemRoles" Relationship="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_Gateways" FromRole="tblIdentity_Gateways" ToRole="tblIdentity_UserSystemRoles" />
+          <NavigationProperty Name="tblIdentity_GatewaySystemRoles" Relationship="ApecIdentityModel.FK_tblIdentity_GatewaySystemRoles_tblIdentity_Gateways" FromRole="tblIdentity_Gateways" ToRole="tblIdentity_GatewaySystemRoles" />
+        </EntityType>
+        <EntityType Name="tblIdentity_Portals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PortalPortalID" Type="Int32" />
+          <Property Name="DomainURLs" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblIdentity_Gateways" Relationship="ApecIdentityModel.FK_tblIdentity_Gateways_tblIdentity_Portals" FromRole="tblIdentity_Portals" ToRole="tblIdentity_Gateways" />
+          <Property Name="DatabaseName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblIdentity_PasswordPolicies" Relationship="ApecIdentityModel.FK_tblIdentity_PasswordPolicies_tblIdentity_Portals" FromRole="tblIdentity_Portals" ToRole="tblIdentity_PasswordPolicies" />
+          <NavigationProperty Name="tblIdentity_UserAssets" Relationship="ApecIdentityModel.FK_tblIdentity_UserAssets_tblIdentity_Portals" FromRole="tblIdentity_Portals" ToRole="tblIdentity_UserAssets" />
+        </EntityType>
+        <Association Name="FK_tblIdentity_Gateways_tblIdentity_Portals">
+          <End Type="ApecIdentityModel.tblIdentity_Portals" Role="tblIdentity_Portals" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_Gateways" Role="tblIdentity_Gateways" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Portals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_Gateways">
+              <PropertyRef Name="PortalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblIdentity_UserPortals">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PortalId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="PortalId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblIdentity_UserProfiles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyAccessRequest" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AccessRightRequest" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="ApecIdentityModel.FK_tblIdentity_UserProfiles_AspNetUsers" FromRole="tblIdentity_UserProfiles" ToRole="AspNetUser" />
+          <Property Name="TimeZoneCode" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="TermsAccepted" Type="Boolean" />
+          <Property Name="TermsAcceptedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_tblIdentity_UserProfiles_AspNetUsers">
+          <End Type="ApecIdentityModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_UserProfiles" Role="tblIdentity_UserProfiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserProfiles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_UserSystemRoles_AspNetUsers">
+          <End Type="ApecIdentityModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_UserSystemRoles" Role="tblIdentity_UserSystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserSystemRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_UserSystemRoles_tblIdentity_Gateways">
+          <End Type="ApecIdentityModel.tblIdentity_Gateways" Role="tblIdentity_Gateways" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_UserSystemRoles" Role="tblIdentity_UserSystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Gateways">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserSystemRoles">
+              <PropertyRef Name="GatewayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_UserSystemRoles_tblIdentity_SystemRoles">
+          <End Type="ApecIdentityModel.tblIdentity_SystemRoles" Role="tblIdentity_SystemRoles" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_UserSystemRoles" Role="tblIdentity_UserSystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_SystemRoles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserSystemRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblIdentity_Permissions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblIdentity_UserSystemRoles" Relationship="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_Permissions" FromRole="tblIdentity_Permissions" ToRole="tblIdentity_UserSystemRoles" />
+          <NavigationProperty Name="tblIdentity_SystemRolePermissions" Relationship="ApecIdentityModel.FK_tblIdentity_SystemRolePermissions_tblIdentity_Permissions" FromRole="tblIdentity_Permissions" ToRole="tblIdentity_SystemRolePermissions" />
+        </EntityType>
+        <Association Name="FK_tblIdentity_UserSystemRoles_tblIdentity_Permissions">
+          <End Type="ApecIdentityModel.tblIdentity_Permissions" Role="tblIdentity_Permissions" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_UserSystemRoles" Role="tblIdentity_UserSystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Permissions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserSystemRoles">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblIdentity_Statuses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ChangeUser" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="ApecIdentityModel.FK_AspNetUsers_tblIdentity_Statuses" FromRole="tblIdentity_Statuses" ToRole="AspNetUser" />
+        </EntityType>
+        <Association Name="FK_AspNetUsers_tblIdentity_Statuses">
+          <End Type="ApecIdentityModel.tblIdentity_Statuses" Role="tblIdentity_Statuses" Multiplicity="1" />
+          <End Type="ApecIdentityModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Statuses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AspNetUser">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblIdentity_PasswordPolicies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PortalId" Type="Int32" />
+          <Property Name="RequiredLength" Type="Int32" />
+          <Property Name="RequireNonLetterOrDigit" Type="Boolean" />
+          <Property Name="RequireDigit" Type="Boolean" />
+          <Property Name="RequireLowercase" Type="Boolean" />
+          <Property Name="RequireUppercase" Type="Boolean" />
+          <NavigationProperty Name="tblIdentity_Portals" Relationship="ApecIdentityModel.FK_tblIdentity_PasswordPolicies_tblIdentity_Portals" FromRole="tblIdentity_PasswordPolicies" ToRole="tblIdentity_Portals" />
+        </EntityType>
+        <Association Name="FK_tblIdentity_PasswordPolicies_tblIdentity_Portals">
+          <End Type="ApecIdentityModel.tblIdentity_Portals" Role="tblIdentity_Portals" Multiplicity="0..1" />
+          <End Type="ApecIdentityModel.tblIdentity_PasswordPolicies" Role="tblIdentity_PasswordPolicies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Portals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_PasswordPolicies">
+              <PropertyRef Name="PortalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblIdentity_GatewaySystemRoles">
+          <Key>
+            <PropertyRef Name="GatewayId" />
+            <PropertyRef Name="SystemRoleId" />
+          </Key>
+          <Property Name="GatewayId" Type="Int32" Nullable="false" />
+          <Property Name="SystemRoleId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblIdentity_Gateways" Relationship="ApecIdentityModel.FK_tblIdentity_GatewaySystemRoles_tblIdentity_Gateways" FromRole="tblIdentity_GatewaySystemRoles" ToRole="tblIdentity_Gateways" />
+          <NavigationProperty Name="tblIdentity_SystemRoles" Relationship="ApecIdentityModel.FK_tblIdentity_GatewaySystemRoles_tblIdentity_SystemRoles" FromRole="tblIdentity_GatewaySystemRoles" ToRole="tblIdentity_SystemRoles" />
+        </EntityType>
+        <EntityType Name="tblIdentity_SystemRolePermissions">
+          <Key>
+            <PropertyRef Name="SystemRoleId" />
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="SystemRoleId" Type="Int32" Nullable="false" />
+          <Property Name="PermissionId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblIdentity_Permissions" Relationship="ApecIdentityModel.FK_tblIdentity_SystemRolePermissions_tblIdentity_Permissions" FromRole="tblIdentity_SystemRolePermissions" ToRole="tblIdentity_Permissions" />
+          <NavigationProperty Name="tblIdentity_SystemRoles" Relationship="ApecIdentityModel.FK_tblIdentity_SystemRolePermissions_tblIdentity_SystemRoles" FromRole="tblIdentity_SystemRolePermissions" ToRole="tblIdentity_SystemRoles" />
+        </EntityType>
+        <Association Name="FK_tblIdentity_GatewaySystemRoles_tblIdentity_Gateways">
+          <End Type="ApecIdentityModel.tblIdentity_Gateways" Role="tblIdentity_Gateways" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_GatewaySystemRoles" Role="tblIdentity_GatewaySystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Gateways">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_GatewaySystemRoles">
+              <PropertyRef Name="GatewayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_GatewaySystemRoles_tblIdentity_SystemRoles">
+          <End Type="ApecIdentityModel.tblIdentity_SystemRoles" Role="tblIdentity_SystemRoles" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_GatewaySystemRoles" Role="tblIdentity_GatewaySystemRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_SystemRoles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_GatewaySystemRoles">
+              <PropertyRef Name="SystemRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_SystemRolePermissions_tblIdentity_Permissions">
+          <End Type="ApecIdentityModel.tblIdentity_Permissions" Role="tblIdentity_Permissions" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_SystemRolePermissions" Role="tblIdentity_SystemRolePermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Permissions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblIdentity_SystemRolePermissions">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIdentity_SystemRolePermissions_tblIdentity_SystemRoles">
+          <End Type="ApecIdentityModel.tblIdentity_SystemRoles" Role="tblIdentity_SystemRoles" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_SystemRolePermissions" Role="tblIdentity_SystemRolePermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_SystemRoles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_SystemRolePermissions">
+              <PropertyRef Name="SystemRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblIdentity_UserAssets">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="AssetId" />
+            <PropertyRef Name="TypeId" />
+            <PropertyRef Name="PortalId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="AssetId" Type="Int32" Nullable="false" />
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          <Property Name="PortalId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblIdentity_Portals" Relationship="ApecIdentityModel.FK_tblIdentity_UserAssets_tblIdentity_Portals" FromRole="tblIdentity_UserAssets" ToRole="tblIdentity_Portals" />
+        </EntityType>
+        <Association Name="FK_tblIdentity_UserAssets_tblIdentity_Portals">
+          <End Type="ApecIdentityModel.tblIdentity_Portals" Role="tblIdentity_Portals" Multiplicity="1" />
+          <End Type="ApecIdentityModel.tblIdentity_UserAssets" Role="tblIdentity_UserAssets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblIdentity_Portals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIdentity_UserAssets">
+              <PropertyRef Name="PortalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="ApecIdentityModelStoreContainer" CdmEntityContainer="ApecIdentityEntities">
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="ApecIdentityModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="ApecIdentityModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="ApecIdentityModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserRoles">
+            <EntityTypeMapping TypeName="ApecIdentityModel.AspNetUserRole">
+              <MappingFragment StoreEntitySet="AspNetUserRoles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="ApecIdentityModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="StatusUpdateDateTime" ColumnName="StatusUpdateDateTime" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="SignUpDate" ColumnName="SignUpDate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_UserSystemRoles">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_UserSystemRoles">
+              <MappingFragment StoreEntitySet="tblIdentity_UserSystemRoles">
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="GatewayId" ColumnName="GatewayId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_SystemRoles">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_SystemRoles">
+              <MappingFragment StoreEntitySet="tblIdentity_SystemRoles">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="ServiceCode" ColumnName="ServiceCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_UserGateways">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_UserGateways">
+              <MappingFragment StoreEntitySet="tblIdentity_UserGateways">
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="GatewayId" ColumnName="GatewayId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_Clients">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_Clients">
+              <MappingFragment StoreEntitySet="tblIdentity_Clients">
+                <ScalarProperty Name="AllowedOrigin" ColumnName="AllowedOrigin" />
+                <ScalarProperty Name="RefreshTokenLifeTime" ColumnName="RefreshTokenLifeTime" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ApplicationType" ColumnName="ApplicationType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Secret" ColumnName="Secret" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_RefreshTokens">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_RefreshTokens">
+              <MappingFragment StoreEntitySet="tblIdentity_RefreshTokens">
+                <ScalarProperty Name="ProtectedTicket" ColumnName="ProtectedTicket" />
+                <ScalarProperty Name="ExpiresUtc" ColumnName="ExpiresUtc" />
+                <ScalarProperty Name="IssuedUtc" ColumnName="IssuedUtc" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_Gateways">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_Gateways">
+              <MappingFragment StoreEntitySet="tblIdentity_Gateways">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="PortalGatewayID" ColumnName="PortalGatewayID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_Portals">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_Portals">
+              <MappingFragment StoreEntitySet="tblIdentity_Portals">
+                <ScalarProperty Name="DatabaseName" ColumnName="DatabaseName" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="DomainURLs" ColumnName="DomainURLs" />
+                <ScalarProperty Name="PortalPortalID" ColumnName="PortalPortalID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_UserPortals">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_UserPortals">
+              <MappingFragment StoreEntitySet="tblIdentity_UserPortals">
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="PortalId" ColumnName="PortalId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_UserProfiles">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_UserProfiles">
+              <MappingFragment StoreEntitySet="tblIdentity_UserProfiles">
+                <ScalarProperty Name="TermsAcceptedDateTime" ColumnName="TermsAcceptedDateTime" />
+                <ScalarProperty Name="TermsAccepted" ColumnName="TermsAccepted" />
+                <ScalarProperty Name="TimeZoneCode" ColumnName="TimeZoneCode" />
+                <ScalarProperty Name="AccessRightRequest" ColumnName="AccessRightRequest" />
+                <ScalarProperty Name="CompanyAccessRequest" ColumnName="CompanyAccessRequest" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_Permissions">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_Permissions">
+              <MappingFragment StoreEntitySet="tblIdentity_Permissions">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_Statuses">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_Statuses">
+              <MappingFragment StoreEntitySet="tblIdentity_Statuses">
+                <ScalarProperty Name="ChangeUser" ColumnName="ChangeUser" />
+                <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_PasswordPolicies">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_PasswordPolicies">
+              <MappingFragment StoreEntitySet="tblIdentity_PasswordPolicies">
+                <ScalarProperty Name="RequireUppercase" ColumnName="RequireUppercase" />
+                <ScalarProperty Name="RequireLowercase" ColumnName="RequireLowercase" />
+                <ScalarProperty Name="RequireDigit" ColumnName="RequireDigit" />
+                <ScalarProperty Name="RequireNonLetterOrDigit" ColumnName="RequireNonLetterOrDigit" />
+                <ScalarProperty Name="RequiredLength" ColumnName="RequiredLength" />
+                <ScalarProperty Name="PortalId" ColumnName="PortalId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_GatewaySystemRoles">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_GatewaySystemRoles">
+              <MappingFragment StoreEntitySet="tblIdentity_GatewaySystemRoles">
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="SystemRoleId" ColumnName="SystemRoleId" />
+                <ScalarProperty Name="GatewayId" ColumnName="GatewayId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_SystemRolePermissions">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_SystemRolePermissions">
+              <MappingFragment StoreEntitySet="tblIdentity_SystemRolePermissions">
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+                <ScalarProperty Name="SystemRoleId" ColumnName="SystemRoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIdentity_UserAssets">
+            <EntityTypeMapping TypeName="ApecIdentityModel.tblIdentity_UserAssets">
+              <MappingFragment StoreEntitySet="tblIdentity_UserAssets">
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="PortalId" ColumnName="PortalId" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

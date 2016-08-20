@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7369086-6886-4EEE-A972-8264E2E705E5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JMM.APEC.WebAPI</RootNamespace>
+    <AssemblyName>JMM.APEC.WebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.SemanticLogging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.SemanticLogging.2.0.1406.1\lib\net45\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.SemanticLogging.Database.2.0.1406.1\lib\net45\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling">
+      <HintPath>..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data">
+      <HintPath>..\packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Thinktecture.IdentityModel.Core, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thinktecture.IdentityModel.Core.1.4.0\lib\net45\Thinktecture.IdentityModel.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EmailTemplates\Confirm_PasswordMessage.htm" />
+    <Content Include="EmailTemplates\NotifyAdmin_UserRequest.htm" />
+    <Content Include="EmailTemplates\NotifyAdmin_UserValidation.htm" />
+    <Content Include="EmailTemplates\Reset_PasswordMessage.htm" />
+    <Content Include="EmailTemplates\StandardTemplate_EmailPortal.htm" />
+    <Content Include="EmailTemplates\Validate_EmailMessage.htm" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Apec2.pubxml" />
+    <None Include="Properties\PublishProfiles\FileSystem.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\LangResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LangResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\LangResource.fr-CA.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LangResource.fr-CA.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controllers\RoleAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StatusAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SystemRoleAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserAdminController.cs" />
+    <Compile Include="Areas\Admin\Models\GatewaySystemRoleDto.cs" />
+    <Compile Include="Areas\Admin\Models\PermissionDto.cs" />
+    <Compile Include="Areas\Admin\Models\ResetPasswordAdminBidingModel.cs" />
+    <Compile Include="Areas\Admin\Models\RoleDto.cs" />
+    <Compile Include="Areas\Admin\Models\StatusDto.cs" />
+    <Compile Include="Areas\Admin\Models\SystemRoleDto.cs" />
+    <Compile Include="Areas\Admin\Models\UserDto.cs" />
+    <Compile Include="Areas\Admin\Models\UserFacilitiesUpdateModel.cs" />
+    <Compile Include="Areas\Admin\Models\UserFacilityModelDto.cs" />
+    <Compile Include="Areas\Admin\Models\UserManagementBindingModel.cs" />
+    <Compile Include="Areas\Admin\Models\UserManagementUpdateBindingModel.cs" />
+    <Compile Include="Areas\Admin\Models\UserManagementUpdateStatusModel.cs" />
+    <Compile Include="Areas\Admin\Models\UserPermissionModelDto.cs" />
+    <Compile Include="Areas\Admin\Models\UserSystemRoleDto.cs" />
+    <Compile Include="Areas\Admin\Models\UserSystemRoleModelDto.cs" />
+    <Compile Include="Areas\Admin\Models\UserSystemRolesUpdateModel.cs" />
+    <Compile Include="Areas\Secure\Activity Log\Controllers\ActivityLogController.cs" />
+    <Compile Include="Areas\Secure\Activity Log\Models\ServiceActivityLogBindingModel.cs" />
+    <Compile Include="Areas\Secure\Activity Log\Models\ServiceActivityLogCommentDto.cs" />
+    <Compile Include="Areas\Secure\Activity Log\Models\ServiceActivityLogDto.cs" />
+    <Compile Include="Areas\Secure\Activity Log\Models\ServiceActivityLogMediaDto.cs" />
+    <Compile Include="Areas\Secure\Activity Log\Models\ServiceActivityLogTypeBindingModel.cs" />
+    <Compile Include="Areas\Secure\Activity Log\Models\ServiceActivityLogTypeDto.cs" />
+    <Compile Include="Areas\Secure\Alarm Monitoring\Models\ServiceAlarmBindingModel.cs" />
+    <Compile Include="Areas\Secure\Alarm Monitoring\Models\ServiceAlarmAtgEventDto.cs" />
+    <Compile Include="Areas\Secure\Alarm Monitoring\Models\ServiceAlarmDetailsDto.cs" />
+    <Compile Include="Areas\Secure\Alarm Monitoring\Models\ServiceAlarmListDto.cs" />
+    <Compile Include="Areas\Secure\Calendar\Controllers\CalendarController.cs" />
+    <Compile Include="Areas\Secure\Calendar\Models\ServiceCalendarBindingModel.cs" />
+    <Compile Include="Areas\Secure\Calendar\Models\ServiceCalendarToDoDto.cs" />
+    <Compile Include="Areas\Secure\Controllers\AddressController.cs" />
+    <Compile Include="Areas\Secure\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Secure\Alarm Monitoring\Controllers\AlarmController.cs" />
+    <Compile Include="Areas\Secure\Controllers\ContactController.cs" />
+    <Compile Include="Areas\Secure\Controllers\FacilityController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GatewayAdminController.cs" />
+    <Compile Include="Areas\Secure\Controllers\GatewayController.cs" />
+    <Compile Include="Areas\Secure\Controllers\LinkController.cs" />
+    <Compile Include="Areas\Secure\Controllers\MessageController.cs" />
+    <Compile Include="Areas\Secure\Controllers\ObjectController.cs" />
+    <Compile Include="Areas\Secure\Controllers\PortalController.cs" />
+    <Compile Include="Areas\Secure\Controllers\SensorController.cs" />
+    <Compile Include="Areas\Secure\Controllers\StatusController.cs" />
+    <Compile Include="Areas\Secure\Controllers\UserProfileController.cs" />
+    <Compile Include="Areas\Secure\eFile\Controllers\eFileController.cs" />
+    <Compile Include="Areas\Secure\eFile\Models\EfileBindingModel.cs" />
+    <Compile Include="Areas\Secure\eFile\Models\EFileItemDto.cs" />
+    <Compile Include="Areas\Secure\eFile\Models\EfileNodeLevel.cs" />
+    <Compile Include="Areas\Secure\EventTracker\Controllers\EventTrackerController.cs" />
+    <Compile Include="Areas\Secure\EventTracker\Models\EventTrackerBindingModel.cs" />
+    <Compile Include="Areas\Secure\EventTracker\Models\EventTrackerCategoryBindingModel.cs" />
+    <Compile Include="Areas\Secure\EventTracker\Models\EventTrackerSubTypeBindingModel.cs" />
+    <Compile Include="Areas\Secure\EventTracker\Models\EventTrackerTypeBindingModel.cs" />
+    <Compile Include="Areas\Secure\EventTracker\Models\ServiceEventTrackerCategoryDto.cs" />
+    <Compile Include="Areas\Secure\EventTracker\Models\ServiceEventTrackerDto.cs" />
+    <Compile Include="Areas\Secure\EventTracker\Models\ServiceEventTrackerSubTypeDto.cs" />
+    <Compile Include="Areas\Secure\EventTracker\Models\ServiceEventTrackerTypeDto.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Controllers\FlowMeterController.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Controllers\TankLevelController.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\FlowMeterBindingModel.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\FlowMeterDto.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\FlowMeterEventDto.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\FlowMeterGroupDto.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\TankCompartmentEventBidingModel.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\TankDeliveryDto.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\TankEventDto.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\TankLevelDto.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\TankLevelGroupDto.cs" />
+    <Compile Include="Areas\Secure\Inventory Management\Models\TankLevelsBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\AssetAddressDto.cs" />
+    <Compile Include="Areas\Secure\Models\AssetContactBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\AssetContactDetailsBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\AssetContactDto.cs" />
+    <Compile Include="Areas\Secure\Models\AssetFacilityAddressInfoDto.cs" />
+    <Compile Include="Areas\Secure\Models\AssetFacilityBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\AssetFacilityDetailsBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\AssetFacilityMapDto.cs" />
+    <Compile Include="Areas\Secure\Models\AssetGatewayBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\AssetGatewayContactDto.cs" />
+    <Compile Include="Areas\Admin\Models\AssetGatewayLocationBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\AssetGatewayLocationDto.cs" />
+    <Compile Include="Areas\Secure\Models\AssetGatewayPhoneDto.cs" />
+    <Compile Include="Areas\Secure\Models\AssetPhoneAssignmentDto.cs" />
+    <Compile Include="Areas\Secure\Models\AssetPhoneBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\AssetPhoneDto.cs" />
+    <Compile Include="Areas\Secure\Models\ModuleServiceDto.cs" />
+    <Compile Include="Areas\Secure\Models\SendMessageBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\SensorAssetDto.cs" />
+    <Compile Include="Areas\Secure\Models\SystemMessageAssignmentDto.cs" />
+    <Compile Include="Areas\Secure\Models\SystemMessageBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\SystemMessageDto.cs" />
+    <Compile Include="Areas\Secure\Models\SystemMessageGatewayBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\SystemMessageGatewayDto.cs" />
+    <Compile Include="Areas\Secure\Models\SystemObjectBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\SystemStatusBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\SystemTypeBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\UserProfilePasswordBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\UserProfileUpdateBindingModel.cs" />
+    <Compile Include="Areas\Secure\Release Detection\Controllers\RdController.cs" />
+    <Compile Include="Areas\Secure\Release Detection\Models\RdAssetDto.cs" />
+    <Compile Include="Areas\Secure\Release Detection\Models\RdAssetResultDto.cs" />
+    <Compile Include="Areas\Secure\Release Detection\Models\RdAssetTemplateDto.cs" />
+    <Compile Include="Areas\Secure\Release Detection\Models\RdBindingModel.cs" />
+    <Compile Include="Areas\Secure\Release Detection\Models\RdReportResultDto.cs" />
+    <Compile Include="Areas\Secure\Release Detection\Models\RdStatusDto.cs" />
+    <Compile Include="Authorization\Portals\PortalPasswordPolicy.cs" />
+    <Compile Include="Authorization\Roles\ApplicationSystemRole.cs" />
+    <Compile Include="Code\ControllerHelpers\MessageHelper.cs" />
+    <Compile Include="Code\ControllerHelpers\UserHelper.cs" />
+    <Compile Include="Controllers\SecureApiController.cs" />
+    <Compile Include="DataAccess\PasswordPolicyTable.cs" />
+    <Compile Include="Code\Helpers\IdentityHelper.cs" />
+    <Compile Include="Code\Helpers\SortItem.cs" />
+    <Compile Include="Code\Infrastructure\ApplicationGateway.cs" />
+    <Compile Include="Code\Infrastructure\ApplicationPortal.cs" />
+    <Compile Include="Areas\Secure\Models\AssetFacilityContactPhoneDto.cs" />
+    <Compile Include="Areas\Secure\Models\ServiceCommentDto.cs" />
+    <Compile Include="Areas\Secure\Models\System_UserLinkDto.cs" />
+    <Compile Include="Areas\Secure\Controllers\TypeController.cs" />
+    <Compile Include="Areas\Public\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Public\Controllers\LocationController.cs" />
+    <Compile Include="Areas\Public\Models\CountryModel.cs" />
+    <Compile Include="Areas\Public\Models\CountyModel.cs" />
+    <Compile Include="Areas\Public\Models\StateModel.cs" />
+    <Compile Include="Areas\Public\Models\TimeZoneModel.cs" />
+    <Compile Include="Authorization\Claims\UserGatewayClaim.cs" />
+    <Compile Include="Authorization\Claims\UserPortalClaim.cs" />
+    <Compile Include="Authorization\Claims\UserSystemRoleClaim.cs" />
+    <Compile Include="Authorization\Tokens\ApplicationClient.cs" />
+    <Compile Include="Authorization\Tokens\ApplicationRefreshToken.cs" />
+    <Compile Include="Authorization\Users\IdentityUserProfile.cs" />
+    <Compile Include="Controllers\BaseApiController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\RoleController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\TokenController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\ApplicationDbContext.cs" />
+    <Compile Include="DataAccess\ClientTable.cs" />
+    <Compile Include="DataAccess\PortalTable.cs" />
+    <Compile Include="DataAccess\RefreshTokenTable.cs" />
+    <Compile Include="DataAccess\UserPortalTable.cs" />
+    <Compile Include="DataAccess\UserProfileTable.cs" />
+    <Compile Include="Code\Filters\ClaimsAuthorizationAttribute.cs" />
+    <Compile Include="Code\Filters\LogActionFilter.cs" />
+    <Compile Include="Code\Filters\TimingActionFilter.cs" />
+    <Compile Include="Code\Helpers\Helper.cs" />
+    <Compile Include="Authorization\Roles\ApplicationIdentityRole.cs" />
+    <Compile Include="Authorization\Users\ApplicationIdentityUser.cs" />
+    <Compile Include="Authorization\Roles\ApplicationRoleManager.cs" />
+    <Compile Include="Authorization\Roles\ApplicationRoleStore.cs" />
+    <Compile Include="Authorization\Users\ApplicationUserManager.cs" />
+    <Compile Include="Authorization\Users\ApplicationUserStore.cs" />
+    <Compile Include="Authorization\Claims\ClaimValue.cs" />
+    <Compile Include="Authorization\Claims\ComplexClaim.cs" />
+    <Compile Include="Authorization\Roles\RolesFromClaims.cs" />
+    <Compile Include="DataAccess\RoleTable.cs" />
+    <Compile Include="DataAccess\UserClaimsTable.cs" />
+    <Compile Include="DataAccess\UserLoginsTable.cs" />
+    <Compile Include="DataAccess\UserRolesTable.cs" />
+    <Compile Include="DataAccess\UserSystemRolesTable.cs" />
+    <Compile Include="DataAccess\UserTable.cs" />
+    <Compile Include="LanguageMessageHandler.cs" />
+    <Compile Include="Models\ApplicationEnum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\CreateCategoryBindingModel.cs" />
+    <Compile Include="Models\CreateFacilityBindingModel.cs" />
+    <Compile Include="Models\CreateGatewayBindingModel.cs" />
+    <Compile Include="Models\CreateObjectBindingModel.cs" />
+    <Compile Include="Models\CreatePortalBindingModel.cs" />
+    <Compile Include="Models\CreateRoleBindingModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\CreateSearchCriteriaBindingModel.cs" />
+    <Compile Include="Models\CreateStatusBindingModel.cs" />
+    <Compile Include="Models\CreateTypeBindingModel.cs" />
+    <Compile Include="Models\CreateUserBindingModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Secure\Models\AssetFacilityDto.cs" />
+    <Compile Include="Areas\Secure\Models\AssetGatewayDto.cs" />
+    <Compile Include="Areas\Secure\Models\AssetPortalDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Secure\Alarm Monitoring\Models\ServiceAlarmInfoDto.cs" />
+    <Compile Include="Areas\Secure\Alarm Monitoring\Models\ServiceAlarmEventDto.cs" />
+    <Compile Include="Areas\Secure\Alarm Monitoring\Models\ServiceAlarmWorklogDto.cs" />
+    <Compile Include="Areas\Secure\Models\SystemCategoryDto.cs" />
+    <Compile Include="Areas\Secure\Models\SystemCountryDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Secure\Models\SystemCountyDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Secure\Models\SystemObjectDto.cs" />
+    <Compile Include="Areas\Secure\Models\SystemGatewayServiceDto.cs" />
+    <Compile Include="Areas\Secure\Models\SystemStateDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Secure\Models\SystemStatusDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Secure\Models\SystemTimeZoneDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Secure\Models\SystemTypeDto.cs" />
+    <Compile Include="Models\EmailConfirmationModel.cs" />
+    <Compile Include="Models\ForgotPasswordBindingModel.cs" />
+    <Compile Include="Areas\Secure\Models\SystemUserLinkDto.cs" />
+    <Compile Include="Models\MetadataWrapper.cs" />
+    <Compile Include="Models\ModelFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ResetPasswordBindingModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\CustomJwtFormat.cs" />
+    <Compile Include="Providers\CustomOAuthProvider.cs" />
+    <Compile Include="Providers\CustomPasswordValidator.cs" />
+    <Compile Include="Providers\CustomRefreshTokenProvider.cs" />
+    <Compile Include="Providers\CustomUserValidator.cs" />
+    <Compile Include="Providers\ExtendedClaimProvider.cs" />
+    <Compile Include="Services\IdentityEmailService.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\LangResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>LangResource.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JMM.APEC.ActionService\JMM.APEC.ActionService.csproj">
+      <Project>{71986355-0f3a-4368-a419-4b086fe6ae59}</Project>
+      <Name>JMM.APEC.ActionService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.ActivityLog\JMM.APEC.ActivityLog.csproj">
+      <Project>{34695ccb-0702-44d2-90b2-12e91ab77afc}</Project>
+      <Name>JMM.APEC.ActivityLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Alarm\JMM.APEC.Alarm.csproj">
+      <Project>{e58878d2-c2e7-42b7-b2fc-3dba0bc7b8e7}</Project>
+      <Name>JMM.APEC.Alarm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Calendar\JMM.APEC.Calendar.csproj">
+      <Project>{94aa7061-96d1-4b0b-86b1-81b64d191df9}</Project>
+      <Name>JMM.APEC.Calendar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Core\JMM.APEC.Core.csproj">
+      <Project>{39c19c2f-7306-4fd9-ba63-2d828cf87cf0}</Project>
+      <Name>JMM.APEC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Efile\JMM.APEC.Efile.csproj">
+      <Project>{b7278a2c-49cb-4e4d-ad13-f2b481d2660e}</Project>
+      <Name>JMM.APEC.Efile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.EventTracker\JMM.APEC.EventTracker.csproj">
+      <Project>{a70c8b4a-65d7-454e-a1cf-bafa195f9b4c}</Project>
+      <Name>JMM.APEC.EventTracker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Identity.BusinessObjects\JMM.APEC.Identity.BusinessObjects.csproj">
+      <Project>{35963715-2807-41f3-95fd-ec7377cd5e98}</Project>
+      <Name>JMM.APEC.Identity.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Identity.DataObjects\JMM.APEC.Identity.DataObjects.csproj">
+      <Project>{ceff4c7c-72b2-474b-94ac-becbdbb6ea32}</Project>
+      <Name>JMM.APEC.Identity.DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.IMS\JMM.APEC.IMS.csproj">
+      <Project>{ab9d9d7f-bbe9-4983-aaff-b86fb802d05d}</Project>
+      <Name>JMM.APEC.IMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.ReleaseDetection\JMM.APEC.ReleaseDetection.csproj">
+      <Project>{3dbbb7e7-3c33-4c10-9b4a-927490406784}</Project>
+      <Name>JMM.APEC.ReleaseDetection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.WebAPI.ExceptionHandling\JMM.APEC.WebAPI.ExceptionHandling.csproj">
+      <Project>{61ef54bf-a0e4-442e-aec8-f750303b9a9c}</Project>
+      <Name>JMM.APEC.WebAPI.ExceptionHandling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.WebAPI.Logger\JMM.APEC.WebAPI.Logging.csproj">
+      <Project>{c5e0a3e9-2498-4d89-a61f-984d3ee78feb}</Project>
+      <Name>JMM.APEC.WebAPI.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\LangResource.fr-CA.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>LangResource.fr-CA.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50387</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50387/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,169 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.WebAPI", "JMM.APEC.WebAPI\JMM.APEC.WebAPI.csproj", "{E7369086-6886-4EEE-A972-8264E2E705E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.Identity.DataObjects", "JMM.APEC.Identity.DataObjects\JMM.APEC.Identity.DataObjects.csproj", "{CEFF4C7C-72B2-474B-94AC-BECBDBB6EA32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.Identity.BusinessObjects", "JMM.APEC.Identity.BusinessObjects\JMM.APEC.Identity.BusinessObjects.csproj", "{35963715-2807-41F3-95FD-EC7377CD5E98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.WebAPI.Logging", "JMM.APEC.WebAPI.Logger\JMM.APEC.WebAPI.Logging.csproj", "{C5E0A3E9-2498-4D89-A61F-984D3EE78FEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.WebAPI.ExceptionHandling", "JMM.APEC.WebAPI.ExceptionHandling\JMM.APEC.WebAPI.ExceptionHandling.csproj", "{61EF54BF-A0E4-442E-AEC8-F750303B9A9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.ActionService", "JMM.APEC.ActionService\JMM.APEC.ActionService.csproj", "{71986355-0F3A-4368-A419-4B086FE6AE59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.ActivityLog", "JMM.APEC.ActivityLog\JMM.APEC.ActivityLog.csproj", "{34695CCB-0702-44D2-90B2-12E91AB77AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.Core", "JMM.APEC.Core\JMM.APEC.Core.csproj", "{39C19C2F-7306-4FD9-BA63-2D828CF87CF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.ReleaseDetection", "JMM.APEC.ReleaseDetection\JMM.APEC.ReleaseDetection.csproj", "{3DBBB7E7-3C33-4C10-9B4A-927490406784}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.EventTracker", "JMM.APEC.EventTracker\JMM.APEC.EventTracker.csproj", "{A70C8B4A-65D7-454E-A1CF-BAFA195F9B4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.DAL", "JMM.APEC.DAL\JMM.APEC.DAL.csproj", "{C20E06E2-7EE2-4F37-8412-90CBBD44FE93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.Alarm", "JMM.APEC.Alarm\JMM.APEC.Alarm.csproj", "{E58878D2-C2E7-42B7-B2FC-3DBA0BC7B8E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.Common", "JMM.APEC.Common\JMM.APEC.Common.csproj", "{6A4A3C6B-D684-4EE9-AD5E-14EEA417E92F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.Efile", "JMM.APEC.Efile\JMM.APEC.Efile.csproj", "{B7278A2C-49CB-4E4D-AD13-F2B481D2660E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.Calendar", "JMM.APEC.Calendar\JMM.APEC.Calendar.csproj", "{94AA7061-96D1-4B0B-86B1-81B64D191DF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMM.APEC.IMS", "JMM.APEC.IMS\JMM.APEC.IMS.csproj", "{AB9D9D7F-BBE9-4983-AAFF-B86FB802D05D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7369086-6886-4EEE-A972-8264E2E705E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7369086-6886-4EEE-A972-8264E2E705E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7369086-6886-4EEE-A972-8264E2E705E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7369086-6886-4EEE-A972-8264E2E705E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFF4C7C-72B2-474B-94AC-BECBDBB6EA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFF4C7C-72B2-474B-94AC-BECBDBB6EA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFF4C7C-72B2-474B-94AC-BECBDBB6EA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEFF4C7C-72B2-474B-94AC-BECBDBB6EA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35963715-2807-41F3-95FD-EC7377CD5E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35963715-2807-41F3-95FD-EC7377CD5E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35963715-2807-41F3-95FD-EC7377CD5E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35963715-2807-41F3-95FD-EC7377CD5E98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5E0A3E9-2498-4D89-A61F-984D3EE78FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E0A3E9-2498-4D89-A61F-984D3EE78FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E0A3E9-2498-4D89-A61F-984D3EE78FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E0A3E9-2498-4D89-A61F-984D3EE78FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61EF54BF-A0E4-442E-AEC8-F750303B9A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EF54BF-A0E4-442E-AEC8-F750303B9A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EF54BF-A0E4-442E-AEC8-F750303B9A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EF54BF-A0E4-442E-AEC8-F750303B9A9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71986355-0F3A-4368-A419-4B086FE6AE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71986355-0F3A-4368-A419-4B086FE6AE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71986355-0F3A-4368-A419-4B086FE6AE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71986355-0F3A-4368-A419-4B086FE6AE59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34695CCB-0702-44D2-90B2-12E91AB77AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34695CCB-0702-44D2-90B2-12E91AB77AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34695CCB-0702-44D2-90B2-12E91AB77AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34695CCB-0702-44D2-90B2-12E91AB77AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C19C2F-7306-4FD9-BA63-2D828CF87CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C19C2F-7306-4FD9-BA63-2D828CF87CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C19C2F-7306-4FD9-BA63-2D828CF87CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C19C2F-7306-4FD9-BA63-2D828CF87CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DBBB7E7-3C33-4C10-9B4A-927490406784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DBBB7E7-3C33-4C10-9B4A-927490406784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DBBB7E7-3C33-4C10-9B4A-927490406784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DBBB7E7-3C33-4C10-9B4A-927490406784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70C8B4A-65D7-454E-A1CF-BAFA195F9B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70C8B4A-65D7-454E-A1CF-BAFA195F9B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70C8B4A-65D7-454E-A1CF-BAFA195F9B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70C8B4A-65D7-454E-A1CF-BAFA195F9B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C20E06E2-7EE2-4F37-8412-90CBBD44FE93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C20E06E2-7EE2-4F37-8412-90CBBD44FE93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C20E06E2-7EE2-4F37-8412-90CBBD44FE93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C20E06E2-7EE2-4F37-8412-90CBBD44FE93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E58878D2-C2E7-42B7-B2FC-3DBA0BC7B8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E58878D2-C2E7-42B7-B2FC-3DBA0BC7B8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E58878D2-C2E7-42B7-B2FC-3DBA0BC7B8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E58878D2-C2E7-42B7-B2FC-3DBA0BC7B8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A4A3C6B-D684-4EE9-AD5E-14EEA417E92F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A4A3C6B-D684-4EE9-AD5E-14EEA417E92F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A4A3C6B-D684-4EE9-AD5E-14EEA417E92F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A4A3C6B-D684-4EE9-AD5E-14EEA417E92F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7278A2C-49CB-4E4D-AD13-F2B481D2660E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7278A2C-49CB-4E4D-AD13-F2B481D2660E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7278A2C-49CB-4E4D-AD13-F2B481D2660E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7278A2C-49CB-4E4D-AD13-F2B481D2660E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94AA7061-96D1-4B0B-86B1-81B64D191DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94AA7061-96D1-4B0B-86B1-81B64D191DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94AA7061-96D1-4B0B-86B1-81B64D191DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94AA7061-96D1-4B0B-86B1-81B64D191DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB9D9D7F-BBE9-4983-AAFF-B86FB802D05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB9D9D7F-BBE9-4983-AAFF-B86FB802D05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB9D9D7F-BBE9-4983-AAFF-B86FB802D05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB9D9D7F-BBE9-4983-AAFF-B86FB802D05D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 17
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://jmmelgrds01:8080/tfs/jmmglobalcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = JMM.APEC.Identity.BusinessObjects\\JMM.APEC.Identity.BusinessObjects.csproj
+		SccProjectName1 = JMM.APEC.Identity.BusinessObjects
+		SccLocalPath1 = JMM.APEC.Identity.BusinessObjects
+		SccProjectUniqueName2 = JMM.APEC.Identity.DataObjects\\JMM.APEC.Identity.DataObjects.csproj
+		SccProjectName2 = JMM.APEC.Identity.DataObjects
+		SccLocalPath2 = JMM.APEC.Identity.DataObjects
+		SccProjectUniqueName3 = JMM.APEC.WebAPI\\JMM.APEC.WebAPI.csproj
+		SccProjectName3 = JMM.APEC.WebAPI
+		SccLocalPath3 = JMM.APEC.WebAPI
+		SccProjectUniqueName4 = JMM.APEC.WebAPI.Logger\\JMM.APEC.WebAPI.Logging.csproj
+		SccProjectName4 = JMM.APEC.WebAPI.Logger
+		SccLocalPath4 = JMM.APEC.WebAPI.Logger
+		SccProjectUniqueName5 = JMM.APEC.WebAPI.ExceptionHandling\\JMM.APEC.WebAPI.ExceptionHandling.csproj
+		SccProjectName5 = JMM.APEC.WebAPI.ExceptionHandling
+		SccLocalPath5 = JMM.APEC.WebAPI.ExceptionHandling
+		SccProjectUniqueName6 = JMM.APEC.ActionService\\JMM.APEC.ActionService.csproj
+		SccProjectName6 = JMM.APEC.ActionService
+		SccLocalPath6 = JMM.APEC.ActionService
+		SccProjectUniqueName7 = JMM.APEC.ActivityLog\\JMM.APEC.ActivityLog.csproj
+		SccProjectName7 = JMM.APEC.ActivityLog
+		SccLocalPath7 = JMM.APEC.ActivityLog
+		SccProjectUniqueName8 = JMM.APEC.Core\\JMM.APEC.Core.csproj
+		SccProjectName8 = JMM.APEC.Core
+		SccLocalPath8 = JMM.APEC.Core
+		SccProjectUniqueName9 = JMM.APEC.ReleaseDetection\\JMM.APEC.ReleaseDetection.csproj
+		SccProjectName9 = JMM.APEC.ReleaseDetection
+		SccLocalPath9 = JMM.APEC.ReleaseDetection
+		SccProjectUniqueName10 = JMM.APEC.EventTracker\\JMM.APEC.EventTracker.csproj
+		SccProjectName10 = JMM.APEC.EventTracker
+		SccLocalPath10 = JMM.APEC.EventTracker
+		SccProjectUniqueName11 = JMM.APEC.DAL\\JMM.APEC.DAL.csproj
+		SccProjectName11 = JMM.APEC.DAL
+		SccLocalPath11 = JMM.APEC.DAL
+		SccProjectUniqueName12 = JMM.APEC.Alarm\\JMM.APEC.Alarm.csproj
+		SccProjectName12 = JMM.APEC.Alarm
+		SccLocalPath12 = JMM.APEC.Alarm
+		SccProjectUniqueName13 = JMM.APEC.Common\\JMM.APEC.Common.csproj
+		SccProjectName13 = JMM.APEC.Common
+		SccLocalPath13 = JMM.APEC.Common
+		SccProjectUniqueName14 = JMM.APEC.Efile\\JMM.APEC.Efile.csproj
+		SccProjectName14 = JMM.APEC.Efile
+		SccLocalPath14 = JMM.APEC.Efile
+		SccProjectUniqueName15 = JMM.APEC.Calendar\\JMM.APEC.Calendar.csproj
+		SccProjectName15 = JMM.APEC.Calendar
+		SccLocalPath15 = JMM.APEC.Calendar
+		SccProjectUniqueName16 = JMM.APEC.IMS\\JMM.APEC.IMS.csproj
+		SccProjectName16 = JMM.APEC.IMS
+		SccLocalPath16 = JMM.APEC.IMS
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2677b759063d4079977a71c85dc8542b" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="ApecIdentityModel.AspNetRole" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApecIdentityModel.AspNetUserClaim" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApecIdentityModel.AspNetUserLogin" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApecIdentityModel.AspNetUserRole" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApecIdentityModel.AspNetUser" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="ApecIdentityModel.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="ApecIdentityModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ApecIdentityModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ApecIdentityModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_UserSystemRoles" Width="1.5" PointX="8.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_SystemRoles" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_UserGateways" Width="2" PointX="9.375" PointY="9.5" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_Clients" Width="2.125" PointX="8.125" PointY="11.5" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_RefreshTokens" Width="1.875" PointX="6" PointY="11.625" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_Gateways" Width="1.5" PointX="8.625" PointY="1.125" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_Portals" Width="1.5" PointX="6.375" PointY="1" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_Gateways_tblIdentity_Portals" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_UserPortals" Width="1.75" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_UserProfiles" Width="2" PointX="3" PointY="12.75" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_UserProfiles_AspNetUsers" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_AspNetUsers" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_Gateways" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_SystemRoles" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_Permissions" Width="1.5" PointX="11.375" PointY="0.875" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_UserSystemRoles_tblIdentity_Permissions" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_Statuses" Width="1.5" PointX="2.125" PointY="0.5" />
+        <AssociationConnector Association="ApecIdentityModel.FK_AspNetUsers_tblIdentity_Statuses" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_PasswordPolicies" Width="1.5" PointX="8.625" PointY="15.25" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_PasswordPolicies_tblIdentity_Portals" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_GatewaySystemRoles" Width="1.5" PointX="10.875" PointY="4.875" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_SystemRolePermissions" Width="1.5" PointX="13.625" PointY="4.75" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_GatewaySystemRoles_tblIdentity_Gateways" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_GatewaySystemRoles_tblIdentity_SystemRoles" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_SystemRolePermissions_tblIdentity_Permissions" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_SystemRolePermissions_tblIdentity_SystemRoles" />
+        <EntityTypeShape EntityType="ApecIdentityModel.tblIdentity_UserAssets" Width="1.5" PointX="8.625" PointY="19.5" />
+        <AssociationConnector Association="ApecIdentityModel.FK_tblIdentity_UserAssets_tblIdentity_Portals" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

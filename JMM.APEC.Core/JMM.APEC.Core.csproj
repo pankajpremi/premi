@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39C19C2F-7306-4FD9-BA63-2D828CF87CF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JMM.APEC.Core</RootNamespace>
+    <AssemblyName>JMM.APEC.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationSystemUser.cs" />
+    <Compile Include="ApplicationUserGateway.cs" />
+    <Compile Include="ApplicationUserPortal.cs" />
+    <Compile Include="ApplicationUserSystemRole.cs" />
+    <Compile Include="BusinessObject.cs" />
+    <Compile Include="BusinessRules\BusinessRule.cs" />
+    <Compile Include="BusinessRules\ValidateId.cs" />
+    <Compile Include="EnterpriseLibrary\AssetAddressDao.cs" />
+    <Compile Include="EnterpriseLibrary\AssetContactDao.cs" />
+    <Compile Include="EnterpriseLibrary\AssetFacilityDao.cs" />
+    <Compile Include="EnterpriseLibrary\AssetFacilityFuelDao.cs" />
+    <Compile Include="EnterpriseLibrary\AssetGatewayDao.cs" />
+    <Compile Include="EnterpriseLibrary\AssetPhoneDao.cs" />
+    <Compile Include="EnterpriseLibrary\AssetPortalDao.cs" />
+    <Compile Include="EnterpriseLibrary\AssetSensorDao.cs" />
+    <Compile Include="EnterpriseLibrary\EcommModuleDao.cs" />
+    <Compile Include="EnterpriseLibrary\EmailTemplateDao.cs" />
+    <Compile Include="EnterpriseLibrary\LocationDao.cs" />
+    <Compile Include="EnterpriseLibrary\SystemCategoryDao.cs" />
+    <Compile Include="EnterpriseLibrary\SystemMessageDao.cs" />
+    <Compile Include="EnterpriseLibrary\SystemObjectDao.cs" />
+    <Compile Include="EnterpriseLibrary\SystemStatusDao.cs" />
+    <Compile Include="EnterpriseLibrary\SystemTypeDao.cs" />
+    <Compile Include="EnterpriseLibrary\SystemUserLinkDao.cs" />
+    <Compile Include="Entities\Asset_Address.cs" />
+    <Compile Include="Entities\Asset_Agency.cs" />
+    <Compile Include="Entities\Asset_Contact.cs" />
+    <Compile Include="Entities\Asset_ContactAssignment.cs" />
+    <Compile Include="Entities\Asset_Facility.cs" />
+    <Compile Include="Entities\Asset_FacilityFuel.cs" />
+    <Compile Include="Entities\Asset_Gateway.cs" />
+    <Compile Include="Entities\Asset_Media.cs" />
+    <Compile Include="Entities\Asset_Phone.cs" />
+    <Compile Include="Entities\Asset_PhoneAssignment.cs" />
+    <Compile Include="Entities\Asset_Portal.cs" />
+    <Compile Include="Entities\Asset_Sensor.cs" />
+    <Compile Include="Entities\Asset_SensorAssignment.cs" />
+    <Compile Include="Entities\Asset_Vendor.cs" />
+    <Compile Include="Entities\Ecomm_Module.cs" />
+    <Compile Include="Entities\Ecomm_ModuleService.cs" />
+    <Compile Include="Entities\Ecomm_Service.cs" />
+    <Compile Include="Entities\System_Brand.cs" />
+    <Compile Include="Entities\System_Category.cs" />
+    <Compile Include="Entities\System_Country.cs" />
+    <Compile Include="Entities\System_County.cs" />
+    <Compile Include="Entities\System_EmailTemplate.cs" />
+    <Compile Include="Entities\System_EmailTransport.cs" />
+    <Compile Include="Entities\System_Message.cs" />
+    <Compile Include="Entities\System_MessageAssignment.cs" />
+    <Compile Include="Entities\System_MessageUserDismissal.cs" />
+    <Compile Include="Entities\System_Object.cs" />
+    <Compile Include="Entities\System_Product.cs" />
+    <Compile Include="Entities\System_State.cs" />
+    <Compile Include="Entities\System_Status.cs" />
+    <Compile Include="Entities\System_StatusGateway.cs" />
+    <Compile Include="Entities\System_StatusType.cs" />
+    <Compile Include="Entities\System_SubType.cs" />
+    <Compile Include="Entities\System_TimeZone.cs" />
+    <Compile Include="Entities\System_Type.cs" />
+    <Compile Include="Entities\System_UserLink.cs" />
+    <Compile Include="HelperEntities\Asset_ContactAssignmentByContact.cs" />
+    <Compile Include="HelperEntities\Asset_ContactInformation.cs" />
+    <Compile Include="HelperEntities\Asset_FacilityDetails.cs" />
+    <Compile Include="HelperEntities\Asset_FacilityFilter.cs" />
+    <Compile Include="HelperEntities\Asset_GatewayContactList.cs" />
+    <Compile Include="HelperEntities\Asset_GatewayFacility.cs" />
+    <Compile Include="HelperEntities\Asset_GatewayFacilityList.cs" />
+    <Compile Include="HelperEntities\Asset_GatewayInfo.cs" />
+    <Compile Include="HelperEntities\Asset_GatewayLocation.cs" />
+    <Compile Include="HelperEntities\Asset_MediaEFile.cs" />
+    <Compile Include="HelperEntities\Asset_MediaEfileNodeLevel.cs" />
+    <Compile Include="HelperEntities\Asset_PhoneAssignmentEntity.cs" />
+    <Compile Include="HelperEntities\Asset_PhoneInfo.cs" />
+    <Compile Include="HelperEntities\Asset_SensorAsset.cs" />
+    <Compile Include="HelperEntities\SystemMessageAssignmentEntity.cs" />
+    <Compile Include="HelperEntities\System_CategoryType.cs" />
+    <Compile Include="HelperEntities\System_MessageAssignmentList.cs" />
+    <Compile Include="HelperEntities\System_MessageList.cs" />
+    <Compile Include="Interfaces\IAssetAddressDao.cs" />
+    <Compile Include="Interfaces\IAssetContactDao.cs" />
+    <Compile Include="Interfaces\IAssetFacilityDao.cs" />
+    <Compile Include="Interfaces\IAssetFacilityFuelDao.cs" />
+    <Compile Include="Interfaces\IAssetGatewayDao.cs" />
+    <Compile Include="Interfaces\IAssetPhoneDao.cs" />
+    <Compile Include="Interfaces\IAssetPortalDao.cs" />
+    <Compile Include="Interfaces\IAssetSensorDao.cs" />
+    <Compile Include="Interfaces\IEcommModuleDao.cs" />
+    <Compile Include="Interfaces\IEmailTemplateDao.cs" />
+    <Compile Include="Interfaces\ILocationDao.cs" />
+    <Compile Include="Interfaces\ISystemCategoryDao.cs" />
+    <Compile Include="Interfaces\ISystemMessageDao.cs" />
+    <Compile Include="Interfaces\ISystemObjectDao.cs" />
+    <Compile Include="Interfaces\ISystemStatusDao.cs" />
+    <Compile Include="Interfaces\ISystemTypeDao.cs" />
+    <Compile Include="Interfaces\ISystemUserLinkDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\System_SLA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\JMM.APEC.Core.dll" />
+    <Content Include="bin\Debug\JMM.APEC.Core.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JMM.APEC.DAL\JMM.APEC.DAL.csproj">
+      <Project>{c20e06e2-7ee2-4f37-8412-90cbbd44fe93}</Project>
+      <Name>JMM.APEC.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.WebAPI.Logger\JMM.APEC.WebAPI.Logging.csproj">
+      <Project>{c5e0a3e9-2498-4d89-a61f-984d3ee78feb}</Project>
+      <Name>JMM.APEC.WebAPI.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

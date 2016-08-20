@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CEFF4C7C-72B2-474B-94AC-BECBDBB6EA32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JMM.APEC.Identity.DataObjects</RootNamespace>
+    <AssemblyName>JMM.APEC.Identity.DataObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.4\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DaoFactories.cs" />
+    <Compile Include="EntityFramework\AspNetRole.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AspNetUser.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AspNetUserClaim.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AspNetUserLogin.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AspNetUserRole.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\ClientDao.cs" />
+    <Compile Include="EntityFramework\GatewaySystemRoleDao.cs" />
+    <Compile Include="EntityFramework\PasswordPolicyDao.cs" />
+    <Compile Include="EntityFramework\PermissionDao.cs" />
+    <Compile Include="EntityFramework\PortalDao.cs" />
+    <Compile Include="EntityFramework\RoleDao.cs" />
+    <Compile Include="EntityFramework\StatusDao.cs" />
+    <Compile Include="EntityFramework\SystemRoleDao.cs" />
+    <Compile Include="EntityFramework\tblIdentity_Clients.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_Gateways.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_GatewaySystemRoles.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_PasswordPolicies.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_Permissions.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_Portals.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_RefreshTokens.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_Statuses.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_SystemRolePermissions.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_SystemRoles.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_UserAssets.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_UserGateways.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_UserPortals.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_UserProfiles.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\tblIdentity_UserSystemRoles.cs">
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\UserFacilityDao.cs" />
+    <Compile Include="EntityFramework\UserGatewayDao.cs" />
+    <Compile Include="EntityFramework\UserPortalDao.cs" />
+    <Compile Include="EntityFramework\UserSystemRoleDao.cs" />
+    <Compile Include="EntityFramework\UserClaimDao.cs" />
+    <Compile Include="EntityFramework\DaoFactory.cs" />
+    <Compile Include="EntityFramework\Identity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Identity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Identity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Identity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Identity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\UserDao.cs" />
+    <Compile Include="EntityFramework\UserLoginDao.cs" />
+    <Compile Include="EntityFramework\UserRoleDao.cs" />
+    <Compile Include="Helpers\PagingExtension.cs" />
+    <Compile Include="Helpers\SortingExtension.cs" />
+    <Compile Include="IdentityDatabase.cs" />
+    <Compile Include="Interfaces\IClientDao.cs" />
+    <Compile Include="Interfaces\IGatewaySystemRoleDao.cs" />
+    <Compile Include="Interfaces\IPasswordPolicyDao.cs" />
+    <Compile Include="Interfaces\IPermissionDao.cs" />
+    <Compile Include="Interfaces\IPortalDao.cs" />
+    <Compile Include="Interfaces\IRefreshTokenDao.cs" />
+    <Compile Include="Interfaces\IRoleDao.cs" />
+    <Compile Include="Interfaces\IStatusDao.cs" />
+    <Compile Include="Interfaces\ISystemRoleDao.cs" />
+    <Compile Include="Interfaces\IUserFacilityDao.cs" />
+    <Compile Include="Interfaces\IUserGatewayDao.cs" />
+    <Compile Include="Interfaces\IUserPortalDao.cs" />
+    <Compile Include="Interfaces\IUserProfileDao.cs" />
+    <Compile Include="Interfaces\IUserSystemRoleDao.cs" />
+    <Compile Include="Interfaces\IUserClaimDao.cs" />
+    <Compile Include="Interfaces\IDaoFactory.cs" />
+    <Compile Include="Interfaces\IUserDao.cs" />
+    <Compile Include="Interfaces\IUserLoginDao.cs" />
+    <Compile Include="Interfaces\IUserRoleDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EntityFramework\RefreshTokenDao.cs" />
+    <Compile Include="EntityFramework\UserProfileDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EntityFramework\Identity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Identity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="EntityFramework\Identity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Identity.edmx</DependentUpon>
+      <LastGenOutput>Identity.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EntityFramework\Identity.edmx.diagram">
+      <DependentUpon>Identity.edmx</DependentUpon>
+    </None>
+    <None Include="EntityFramework\Identity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Identity.edmx</DependentUpon>
+      <LastGenOutput>Identity.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EnterpriseLibrary\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JMM.APEC.Core\JMM.APEC.Core.csproj">
+      <Project>{39c19c2f-7306-4fd9-ba63-2d828cf87cf0}</Project>
+      <Name>JMM.APEC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.DAL\JMM.APEC.DAL.csproj">
+      <Project>{c20e06e2-7ee2-4f37-8412-90cbbd44fe93}</Project>
+      <Name>JMM.APEC.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Identity.BusinessObjects\JMM.APEC.Identity.BusinessObjects.csproj">
+      <Project>{35963715-2807-41f3-95fd-ec7377cd5e98}</Project>
+      <Name>JMM.APEC.Identity.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.WebAPI.Logger\JMM.APEC.WebAPI.Logging.csproj">
+      <Project>{c5e0a3e9-2498-4d89-a61f-984d3ee78feb}</Project>
+      <Name>JMM.APEC.WebAPI.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

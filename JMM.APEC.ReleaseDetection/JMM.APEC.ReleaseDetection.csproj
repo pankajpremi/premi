@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DBBB7E7-3C33-4C10-9B4A-927490406784}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JMM.APEC.ReleaseDetection</RootNamespace>
+    <AssemblyName>JMM.APEC.ReleaseDetection</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnterpriseLibrary\ServiceReleaseDetectionDao.cs" />
+    <Compile Include="Entities\Service_ReleaseDetectionAsset.cs" />
+    <Compile Include="Entities\Service_ReleaseDetectionAssetTemplate.cs" />
+    <Compile Include="Entities\Service_ReleaseDetectionResult.cs" />
+    <Compile Include="Entities\Service_ReleaseDetectionStatus.cs" />
+    <Compile Include="Entities\Service_ReleaseDetectionTest.cs" />
+    <Compile Include="Entities\Service_ReleaseDetectionVendor.cs" />
+    <Compile Include="HelperEntities\Service_ReleaseDetection.cs" />
+    <Compile Include="Interfaces\IServiceReleaseDetectionDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\JMM.APEC.Core\JMM.APEC.Core.csproj">
+      <Project>{39c19c2f-7306-4fd9-ba63-2d828cf87cf0}</Project>
+      <Name>JMM.APEC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.DAL\JMM.APEC.DAL.csproj">
+      <Project>{c20e06e2-7ee2-4f37-8412-90cbbd44fe93}</Project>
+      <Name>JMM.APEC.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.WebAPI.Logger\JMM.APEC.WebAPI.Logging.csproj">
+      <Project>{c5e0a3e9-2498-4d89-a61f-984d3ee78feb}</Project>
+      <Name>JMM.APEC.WebAPI.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

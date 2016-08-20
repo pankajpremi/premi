@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71986355-0F3A-4368-A419-4B086FE6AE59}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JMM.APEC.ActionService</RootNamespace>
+    <AssemblyName>JMM.APEC.ActionService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HelperServices\IMessageService.cs" />
+    <Compile Include="HelperServices\MessageService.cs" />
+    <Compile Include="IdentityService.cs" />
+    <Compile Include="IIdentityService.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JMM.APEC.ActivityLog\JMM.APEC.ActivityLog.csproj">
+      <Project>{34695ccb-0702-44d2-90b2-12e91ab77afc}</Project>
+      <Name>JMM.APEC.ActivityLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Alarm\JMM.APEC.Alarm.csproj">
+      <Project>{e58878d2-c2e7-42b7-b2fc-3dba0bc7b8e7}</Project>
+      <Name>JMM.APEC.Alarm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Calendar\JMM.APEC.Calendar.csproj">
+      <Project>{94aa7061-96d1-4b0b-86b1-81b64d191df9}</Project>
+      <Name>JMM.APEC.Calendar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Common\JMM.APEC.Common.csproj">
+      <Project>{6a4a3c6b-d684-4ee9-ad5e-14eea417e92f}</Project>
+      <Name>JMM.APEC.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Core\JMM.APEC.Core.csproj">
+      <Project>{39c19c2f-7306-4fd9-ba63-2d828cf87cf0}</Project>
+      <Name>JMM.APEC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Efile\JMM.APEC.Efile.csproj">
+      <Project>{b7278a2c-49cb-4e4d-ad13-f2b481d2660e}</Project>
+      <Name>JMM.APEC.Efile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.EventTracker\JMM.APEC.EventTracker.csproj">
+      <Project>{a70c8b4a-65d7-454e-a1cf-bafa195f9b4c}</Project>
+      <Name>JMM.APEC.EventTracker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Identity.BusinessObjects\JMM.APEC.Identity.BusinessObjects.csproj">
+      <Project>{35963715-2807-41f3-95fd-ec7377cd5e98}</Project>
+      <Name>JMM.APEC.Identity.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.Identity.DataObjects\JMM.APEC.Identity.DataObjects.csproj">
+      <Project>{ceff4c7c-72b2-474b-94ac-becbdbb6ea32}</Project>
+      <Name>JMM.APEC.Identity.DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.IMS\JMM.APEC.IMS.csproj">
+      <Project>{ab9d9d7f-bbe9-4983-aaff-b86fb802d05d}</Project>
+      <Name>JMM.APEC.IMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JMM.APEC.ReleaseDetection\JMM.APEC.ReleaseDetection.csproj">
+      <Project>{3dbbb7e7-3c33-4c10-9b4a-927490406784}</Project>
+      <Name>JMM.APEC.ReleaseDetection</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
